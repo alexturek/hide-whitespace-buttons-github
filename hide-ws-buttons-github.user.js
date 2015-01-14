@@ -15,7 +15,7 @@
       hiding = false,
       restOfQuery = [],
       urlWithPath = window.location.href.split('?')[0];
-  
+
   // Extract the rest of the query
   // and find out if there's a "w=..." pair in there
   $.map(query.split('&'), function(pair) {
@@ -30,7 +30,7 @@
       restOfQuery.push(pair);
     }
   });
-  
+
   var queryWithShowing = restOfQuery.join('&'),
       queryWithHiding = restOfQuery.concat(['w=1']).join('&'),
       showButton = $('<a class="minibutton" href="' + [urlWithPath, queryWithShowing].join('?') + '">WS Shown</a>'),
@@ -41,6 +41,9 @@
     showButton.addClass('selected');
   }
   
-  $('#toc .button-group.right').append(showButton);
-  $('#toc .button-group.right').append(hideButton);
+  var buttonGroup = $('#toc .button-group.right');
+  if(buttonGroup.length == 0)
+    buttonGroup = $('#toc');
+  buttonGroup.append(showButton);
+  buttonGroup.append(hideButton);
 })(jQuery);
