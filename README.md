@@ -4,6 +4,8 @@ Ever see diffs where 90% of the change is indentation, and it's hard to see what
 
 Install this user script to add these buttons to diffs and Pull Requests.
 
+Note: You can do this same thing with `git diff` in the command line by adding a `-w` flag!
+
 # Examples
 
 ## Diff
